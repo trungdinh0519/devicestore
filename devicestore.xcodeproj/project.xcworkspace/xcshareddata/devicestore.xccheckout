@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8EF6E8B9-D6C7-41A4-9F85-8BB73543F382</string>
+	<key>IDESourceControlProjectName</key>
+	<string>devicestore</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9BA726581B440B700E55CB9FE898C7DE8C906161</key>
+		<string>https://github.com/trungdinh0519/devicestore.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>devicestore.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9BA726581B440B700E55CB9FE898C7DE8C906161</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/trungdinh0519/devicestore.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9BA726581B440B700E55CB9FE898C7DE8C906161</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9BA726581B440B700E55CB9FE898C7DE8C906161</string>
+			<key>IDESourceControlWCCName</key>
+			<string>devicestore</string>
+		</dict>
+	</array>
+</dict>
+</plist>
