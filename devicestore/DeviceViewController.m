@@ -7,6 +7,7 @@
 //
 
 #import "DeviceViewController.h"
+#import "DeviceDetailViewController.h"
 
 @interface DeviceViewController ()
 
@@ -56,25 +57,41 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        
+        [context deleteObject:[self.devices objectAtIndex:indexPath.row]];
+        
+        NSError * error = nil;
+        if(![context save:&error]){
+            NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        // remove device from table view
+        [self.devices removeObjectAtIndex:indexPath.row];
+        //[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -127,5 +144,16 @@
     // reload tableView
     [self.tableView reloadData];
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"UpdateDevice"]){
+        
+        NSManagedObject *selectDevice = [self.devices objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        
+        DeviceDetailViewController *detail = segue.destinationViewController;
+        
+        detail.device = selectDevice;
+    }
 }
 @end
